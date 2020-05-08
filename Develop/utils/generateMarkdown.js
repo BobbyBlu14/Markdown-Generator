@@ -1,6 +1,3 @@
-///MarkDown Generator 
-/*  create projectURL func to capture github account with Licencse bage */
-
 function projectURL(github, title){
   const actualTitle = title.toLowerCase().split().join("-");
 return `https://github.com/${github}/${actualTitle}`;
@@ -32,20 +29,20 @@ ${licenseBadge(data.license, data.github, data.title)}
 ##Description
 ${data.description}
 ##Table of Contents
-${data,toC}
-##License 
-${data,license}
+${data.toC}
+
+${licenseSection(data.license)}
 ##Usage
-${data,usage}
+${data.usage}
 ##Installation
-${data,installation}
+${data.installation}
 ##Contributing
-${data,toC}
+${data.toC}
 ##Tests
-${data,tests}
-##Questions
-${data,test}
-`;
+${data.tests}
+
+<img src="${data.avatar_url}">
+`
 }
 
 module.exports = generateMarkdown;
